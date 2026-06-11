@@ -1,11 +1,92 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Lang, DICT } from "@/lib/content";
-import { Tv, ExternalLink } from "lucide-react";
+import { Tv, ExternalLink, Play } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
+
+function getYouTubeEmbedInfo(url: string) {
+  let videoId = "";
+  let start = 0;
+
+  try {
+    const urlObj = new URL(url);
+    if (urlObj.hostname === "youtu.be") {
+      videoId = urlObj.pathname.substring(1);
+    } else if (urlObj.hostname.includes("youtube.com")) {
+      videoId = urlObj.searchParams.get("v") || "";
+    }
+
+    const t = urlObj.searchParams.get("t");
+    if (t) {
+      const cleanT = t.replace("s", "");
+      start = parseInt(cleanT, 10) || 0;
+    }
+  } catch (e) {
+    console.error("Invalid URL", e);
+  }
+
+  return { videoId, start };
+}
+
+function VideoPlayer({ url, title }: { url: string; title: string }) {
+  const { videoId, start } = getYouTubeEmbedInfo(url);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  if (!videoId) return null;
+
+  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  const embedUrl = `https://www.youtube.com/embed/${videoId}?start=${start}&autoplay=1&rel=0`;
+
+  if (isPlaying) {
+    return (
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          aspectRatio: "16/9",
+          overflow: "hidden",
+          borderRadius: "var(--radius-md)",
+          border: "1px solid var(--border-hairline)",
+          background: "#000",
+        }}
+      >
+        <iframe
+          width="100%"
+          height="100%"
+          src={embedUrl}
+          title={title}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      onClick={() => setIsPlaying(true)}
+      className="video-thumbnail-container"
+    >
+      <img
+        src={thumbnailUrl}
+        alt={title}
+        className="thumbnail-img"
+        onError={(e) => {
+          (e.currentTarget as HTMLImageElement).src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+        }}
+      />
+      <div className="thumbnail-overlay" />
+      <div className="play-btn-circle">
+        <Play size={20} style={{ marginLeft: 3 }} />
+      </div>
+    </div>
+  );
+}
 
 export default function InterviewsSection({ lang }: { lang: Lang }) {
   const t = DICT[lang];
@@ -59,7 +140,7 @@ export default function InterviewsSection({ lang }: { lang: Lang }) {
               padding: "24px",
               display: "flex",
               flexDirection: "column",
-              gap: 14,
+              gap: 16,
               transition: "transform 240ms cubic-bezier(0.22, 1, 0.36, 1), border-color 240ms ease, box-shadow 240ms ease",
               cursor: "default",
             }}
@@ -86,6 +167,9 @@ export default function InterviewsSection({ lang }: { lang: Lang }) {
                 [ VIDEO_0{i + 1} ]
               </span>
             </div>
+
+            {/* Video player embedded */}
+            <VideoPlayer url={iv.url} title={iv.medium} />
 
             {/* Info */}
             <div style={{ flex: 1 }}>

@@ -564,14 +564,14 @@ export const DICT = {
         label: "Entrevista destacada",
         medium: "Porcel TV · 2025",
         desc: "Conversación sobre el futuro de la producción audiovisual y la adopción de inteligencia artificial generativa en industrias creativas.",
-        cta: "Ver entrevista",
+        cta: "Ver en YouTube",
         url: "https://youtu.be/XdFfGpapsjA?si=PxrReE7XtA1PxZbC&t=3235"
       },
       {
         label: "Entrevista destacada",
-        medium: "Duoc UC · Take a Look",
+        medium: "Take a Look",
         desc: "Entrevista sobre el rol del Director Creativo, el liderazgo de equipos y la visión estratégica en el sector audiovisual.",
-        cta: "Ver entrevista",
+        cta: "Ver en YouTube",
         url: "https://www.youtube.com/watch?v=Pzkyf_f_vOg&t=11s"
       }
     ],
@@ -697,14 +697,14 @@ export const DICT = {
         label: "Featured Interview",
         medium: "Porcel TV · 2025",
         desc: "A conversation on the future of audiovisual production and generative AI adoption in creative industries.",
-        cta: "View interview",
+        cta: "Watch on YouTube",
         url: "https://youtu.be/XdFfGpapsjA?si=PxrReE7XtA1PxZbC&t=3235"
       },
       {
         label: "Featured Interview",
-        medium: "Duoc UC · Take a Look",
+        medium: "Take a Look",
         desc: "An interview on the role of a Creative Director, team leadership, and strategic vision development in the media industry.",
-        cta: "View interview",
+        cta: "Watch on YouTube",
         url: "https://www.youtube.com/watch?v=Pzkyf_f_vOg&t=11s"
       }
     ],
