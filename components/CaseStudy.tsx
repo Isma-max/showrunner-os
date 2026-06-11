@@ -622,7 +622,7 @@ export default function CaseStudy({
 
       {/* Footer */}
       <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: 10, marginTop: 60, paddingBottom: 44, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.06em", color: "var(--blue-600)" }}>
-        <span>● VERSION 1.0.0</span>
+        <span>● VERSION 1.1.0</span>
         <span>SHOWRUNNER OS — ISMAEL LARRAÍN</span>
       </div>
     </div>

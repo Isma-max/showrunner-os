@@ -438,7 +438,7 @@ export default function Home() {
                 color: "var(--blue-600)",
               }}
             >
-              <span>● VERSION 1.0.0</span>
+              <span>● VERSION 1.1.0</span>
               <span style={{ color: "var(--text-muted)" }}>
                 {DICT[lang].footer.copyright}
               </span>
