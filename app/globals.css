@@ -573,18 +573,54 @@ a { color: inherit; text-decoration: none; }
 /* ---------- FLOATING STICKERS ---------- */
 @keyframes stickerFloat {
   0%, 100% {
-    transform: translateY(0px) rotate(var(--rot));
+    transform: translateY(0px) rotate(var(--rot, 0deg));
   }
-  50% {
-    transform: translateY(-8px) rotate(calc(var(--rot) + 2.5deg));
+  33% {
+    transform: translateY(-5px) rotate(calc(var(--rot, 0deg) + 1.5deg));
+  }
+  66% {
+    transform: translateY(-9px) rotate(calc(var(--rot, 0deg) - 1deg));
   }
 }
+@keyframes stickerFloatAlt {
+  0%, 100% {
+    transform: translateY(0px) rotate(var(--rot, 0deg));
+  }
+  40% {
+    transform: translateY(-6px) rotate(calc(var(--rot, 0deg) - 2deg));
+  }
+  70% {
+    transform: translateY(-3px) rotate(calc(var(--rot, 0deg) + 1.2deg));
+  }
+}
+
+/* Legacy sticker-container (used inside mirai card) */
 .sticker-container {
   animation: stickerFloat 6s ease-in-out infinite;
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .sticker-container:hover {
   animation-play-state: paused;
+}
+
+/* New distributed site-wide stickers */
+.site-sticker {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+  animation: stickerFloat var(--float-dur, 6s) ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+  transform-origin: center center;
+  will-change: transform;
+  transition: opacity 0.3s ease;
+}
+.site-sticker-alt {
+  animation-name: stickerFloatAlt;
+}
+.site-sticker:hover {
+  animation-play-state: paused;
+  opacity: 0.85;
 }
 
 /* ---------- MIRAI MEDIA CARD ---------- */

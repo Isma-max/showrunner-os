@@ -118,39 +118,14 @@ function ProjectCard({
           gap: 16,
         }}
       >
-        {/* Floating stickers for collage effect */}
+        {/* Single subtle star accent — bottom-right corner as a brand whisper */}
         <Sticker
-          src="/iconografia-stickers/sticker-eye.png"
-          alt="Eye sticker"
-          size={52}
-          rotation={12}
-          floatDelay={0}
-          style={{ top: "14px", right: "20px", zIndex: 10 }}
-        />
-        <Sticker
-          src="/iconografia-stickers/corazon-roto.png"
-          alt="Corazón Roto"
-          size={58}
-          rotation={18}
-          floatDelay={1.5}
-          style={{ bottom: "80px", right: "16px", zIndex: 10 }}
-        />
-        <Sticker
-          src="/iconografia-stickers/sticker-flower.png"
-          alt="Flower sticker"
-          size={48}
-          rotation={-15}
-          floatDelay={0.7}
-          style={{ top: "45%", left: "-10px", zIndex: 10 }}
-          className="mobile-hide"
-        />
-        <Sticker
-          src="/iconografia-stickers/pastilla-alada.png"
-          alt="Pastilla Alada"
-          size={46}
-          rotation={-10}
-          floatDelay={2.2}
-          style={{ bottom: "165px", right: "120px", zIndex: 10 }}
+          src="/iconografia-stickers/sticker-stars.png"
+          alt=""
+          size={36}
+          rotation={15}
+          floatDelay={1.2}
+          style={{ bottom: "72px", right: "14px", zIndex: 4, opacity: 0.55 }}
           className="mobile-hide"
         />
 

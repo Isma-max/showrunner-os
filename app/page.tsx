@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import NavRail from "@/components/NavRail";
 import TabBar from "@/components/TabBar";
@@ -12,6 +12,7 @@ import AboutSection from "@/components/AboutSection";
 import InterviewsSection from "@/components/InterviewsSection";
 import ContactSection from "@/components/ContactSection";
 import CaseStudy from "@/components/CaseStudy";
+import SiteSticker from "@/components/SiteSticker";
 import { DICT, Lang } from "@/lib/content";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -360,19 +361,192 @@ export default function Home() {
               <span style={{ marginRight: 120 }}>1440 PX — GRID SYSTEM</span>
             </div>
 
-            <HeroSection
-              lang={lang}
-              onGoWork={() => goSection("sec-work")}
-              onGoContact={() => goSection("sec-contact")}
-              onOpenTelemira={() => openCase("telemira")}
-            />
-            <ServicesSection lang={lang} />
-            <WorkSection lang={lang} onOpenProject={openCase} />
-            <MethodSection lang={lang} />
-            <ExperienceSection lang={lang} />
-            <InterviewsSection lang={lang} />
+            {/* === STICKER LAYER: Escaped Mirai Lab creatures === */}
+
+            {/* Hero stickers */}
+            <div style={{ position: "relative" }}>
+              <HeroSection
+                lang={lang}
+                onGoWork={() => goSection("sec-work")}
+                onGoContact={() => goSection("sec-contact")}
+                onOpenTelemira={() => openCase("telemira")}
+              />
+              {/* punk-girl-1: escaping from the top-right, partially clipped */}
+              <SiteSticker
+                src="/iconografia-stickers/punk-girl-1.png"
+                size={88}
+                rotation={-8}
+                floatDelay={0.3}
+                floatSpeed={7}
+                mobileHide
+                style={{
+                  top: 20,
+                  right: -22,
+                  "--float-dur": "7s",
+                  "--float-delay": "0.3s",
+                } as React.CSSProperties}
+              />
+              {/* sticker-stars: small accent near section bottom-left */}
+              <SiteSticker
+                src="/iconografia-stickers/sticker-stars.png"
+                size={52}
+                rotation={18}
+                floatDelay={1.8}
+                floatSpeed={9}
+                mobileHide
+                style={{
+                  bottom: -10,
+                  left: -18,
+                  opacity: 0.72,
+                  "--float-dur": "9s",
+                  "--float-delay": "1.8s",
+                } as React.CSSProperties}
+              />
+            </div>
+
+            {/* Services section stickers */}
+            <div style={{ position: "relative" }}>
+              <ServicesSection lang={lang} />
+              {/* pastilla-alada: top-right, entering from the edge */}
+              <SiteSticker
+                src="/iconografia-stickers/pastilla-alada.png"
+                size={68}
+                rotation={22}
+                floatDelay={0.6}
+                floatSpeed={8}
+                mobileHide
+                className="site-sticker-alt"
+                style={{
+                  top: -24,
+                  right: -18,
+                  "--float-dur": "8s",
+                  "--float-delay": "0.6s",
+                } as React.CSSProperties}
+              />
+            </div>
+
+            {/* Work section stickers */}
+            <div style={{ position: "relative" }}>
+              <WorkSection lang={lang} onOpenProject={openCase} />
+              {/* sticker-flower: left edge, medium size */}
+              <SiteSticker
+                src="/iconografia-stickers/sticker-flower.png"
+                size={58}
+                rotation={-20}
+                floatDelay={1.1}
+                floatSpeed={10}
+                mobileHide
+                style={{
+                  top: 140,
+                  left: -22,
+                  "--float-dur": "10s",
+                  "--float-delay": "1.1s",
+                } as React.CSSProperties}
+              />
+              {/* corazon-roto: bottom-right of the work grid, peeking in */}
+              <SiteSticker
+                src="/iconografia-stickers/corazon-roto.png"
+                size={62}
+                rotation={12}
+                floatDelay={2.4}
+                floatSpeed={7.5}
+                mobileHide
+                className="site-sticker-alt"
+                style={{
+                  bottom: -16,
+                  right: -14,
+                  "--float-dur": "7.5s",
+                  "--float-delay": "2.4s",
+                } as React.CSSProperties}
+              />
+            </div>
+
+            {/* Method section stickers */}
+            <div style={{ position: "relative" }}>
+              <MethodSection lang={lang} />
+              {/* sticker-eye: left edge, small detail */}
+              <SiteSticker
+                src="/iconografia-stickers/sticker-eye.png"
+                size={48}
+                rotation={-14}
+                floatDelay={0.9}
+                floatSpeed={8.5}
+                mobileHide
+                style={{
+                  top: 100,
+                  left: -16,
+                  opacity: 0.8,
+                  "--float-dur": "8.5s",
+                  "--float-delay": "0.9s",
+                } as React.CSSProperties}
+              />
+            </div>
+
+            {/* Experience section stickers */}
+            <div style={{ position: "relative" }}>
+              <ExperienceSection lang={lang} />
+              {/* cafe-gloria: right side, small secret */}
+              <SiteSticker
+                src="/iconografia-stickers/cafe-gloria.png"
+                size={44}
+                rotation={25}
+                floatDelay={1.5}
+                floatSpeed={11}
+                mobileHide
+                className="site-sticker-alt"
+                style={{
+                  top: 50,
+                  right: -12,
+                  opacity: 0.75,
+                  "--float-dur": "11s",
+                  "--float-delay": "1.5s",
+                } as React.CSSProperties}
+              />
+            </div>
+
+            {/* Interviews section stickers */}
+            <div style={{ position: "relative" }}>
+              <InterviewsSection lang={lang} />
+              {/* punk-girl-2: left edge, bigger, entering the frame */}
+              <SiteSticker
+                src="/iconografia-stickers/punk-girl-2.png"
+                size={82}
+                rotation={-7}
+                floatDelay={0.4}
+                floatSpeed={9}
+                mobileHide
+                style={{
+                  top: 80,
+                  left: -28,
+                  "--float-dur": "9s",
+                  "--float-delay": "0.4s",
+                } as React.CSSProperties}
+              />
+            </div>
+
             <AboutSection lang={lang} />
-            <ContactSection lang={lang} />
+
+            {/* Contact section stickers */}
+            <div style={{ position: "relative" }}>
+              <ContactSection lang={lang} />
+              {/* sticker-stars: bottom-right, exiting the layout */}
+              <SiteSticker
+                src="/iconografia-stickers/sticker-stars.png"
+                size={55}
+                rotation={8}
+                floatDelay={2.1}
+                floatSpeed={8}
+                mobileHide
+                className="site-sticker-alt"
+                style={{
+                  bottom: 40,
+                  right: -18,
+                  opacity: 0.65,
+                  "--float-dur": "8s",
+                  "--float-delay": "2.1s",
+                } as React.CSSProperties}
+              />
+            </div>
 
             {/* Footer */}
             <div
