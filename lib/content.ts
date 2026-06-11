@@ -483,7 +483,7 @@ export const DICT = {
         "Portfolio de Ismael Larraín, director creativo y AI Content Showrunner. Formatos, mundos narrativos, sistemas de contenido, IA generativa, social video y monetización digital.",
     },
     chrome: { availability: "Disponible · 2026" },
-    nav: ["Inicio", "Qué hago", "Proyectos", "Método", "Experiencia", "Contacto"],
+    nav: ["Inicio", "Qué hago", "Proyectos", "Método", "Experiencia", "Entrevistas", "Contacto"],
     tabs: ["Inicio", "Proyectos", "Método", "Contacto"],
     hero: {
       eyebrow: "Portfolio — 2026",
@@ -575,6 +575,10 @@ export const DICT = {
         url: "https://www.youtube.com/watch?v=Pzkyf_f_vOg&t=11s"
       }
     ],
+    interviewsSection: {
+      label: "Entrevistas",
+      title: "Entrevistas destacadas",
+    },
     about: {
       label: "Sobre mí",
       title: "Sobre mí",
@@ -629,7 +633,7 @@ export const DICT = {
         "Portfolio of Ismael Larraín, Creative Director and AI Content Showrunner. Formats, narrative worlds, content systems, generative AI, social video and digital monetization.",
     },
     chrome: { availability: "Available · 2026" },
-    nav: ["Home", "What I do", "Work", "Method", "Experience", "Contact"],
+    nav: ["Home", "What I do", "Work", "Method", "Experience", "Interviews", "Contact"],
     tabs: ["Home", "Work", "Method", "Contact"],
     hero: {
       eyebrow: "Portfolio — 2026",
@@ -704,6 +708,10 @@ export const DICT = {
         url: "https://www.youtube.com/watch?v=Pzkyf_f_vOg&t=11s"
       }
     ],
+    interviewsSection: {
+      label: "Interviews",
+      title: "Featured Interviews",
+    },
     about: {
       label: "About",
       title: "About",
@@ -755,5 +763,5 @@ export const DICT = {
 
 export const LINKEDIN = "https://www.linkedin.com/in/ismael-larrain-izquierdo-23563a24/";
 export const EMAIL = "ismael.larrain@gmail.com";
-export const NAV_ICONS = ["house", "layers", "folder", "workflow", "clock", "archive", "mail"];
-export const SECTIONS = ["sec-hero", "sec-services", "sec-work", "sec-method", "sec-exp", "sec-archive", "sec-contact"];
+export const NAV_ICONS = ["house", "layers", "folder", "workflow", "clock", "tv", "mail"];
+export const SECTIONS = ["sec-hero", "sec-services", "sec-work", "sec-method", "sec-exp", "sec-interviews", "sec-contact"];

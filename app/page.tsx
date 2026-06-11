@@ -9,6 +9,7 @@ import WorkSection from "@/components/WorkSection";
 import MethodSection from "@/components/MethodSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import AboutSection from "@/components/AboutSection";
+import InterviewsSection from "@/components/InterviewsSection";
 import ContactSection from "@/components/ContactSection";
 import CaseStudy from "@/components/CaseStudy";
 import { DICT, Lang } from "@/lib/content";
@@ -23,11 +24,12 @@ const SECTIONS = [
   "sec-work",
   "sec-method",
   "sec-exp",
+  "sec-interviews",
   "sec-contact",
 ];
 
 const TAB_SECTIONS = ["sec-hero", "sec-work", "sec-method", "sec-contact"];
-const TAB_NAV_INDEX = [0, 2, 3, 5];
+const TAB_NAV_INDEX = [0, 2, 3, 6];
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>("es");
@@ -368,6 +370,7 @@ export default function Home() {
             <WorkSection lang={lang} onOpenProject={openCase} />
             <MethodSection lang={lang} />
             <ExperienceSection lang={lang} />
+            <InterviewsSection lang={lang} />
             <AboutSection lang={lang} />
             <ContactSection lang={lang} />
 

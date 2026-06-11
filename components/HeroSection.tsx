@@ -381,63 +381,7 @@ export default function HeroSection({
           ))}
         </div>
 
-        {/* Featured Interview Cards */}
-        {t.interviews && t.interviews.map((iv, idx) => (
-          <div
-            key={idx}
-            style={{
-              background: "var(--surface-card)",
-              border: "1px solid var(--border-hairline)",
-              borderRadius: "var(--radius-lg)",
-              boxShadow: "var(--shadow-window)",
-              padding: "18px 20px 20px",
-              maxWidth: 380,
-              display: "flex",
-              flexDirection: "column",
-              gap: 10,
-              position: "relative",
-              overflow: "hidden"
-            }}
-          >
-            {/* Header label */}
-            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <span style={{ width: 6, height: 6, borderRadius: 999, background: "var(--blue-600)" }} />
-              <span style={{ fontFamily: "var(--font-display)", fontSize: 10, fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--blue-600)" }}>
-                {iv.label}
-              </span>
-            </div>
-            
-            {/* Info */}
-            <div style={{ marginTop: 2 }}>
-              <div style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 16, color: "var(--text-primary)", lineHeight: 1.25 }}>
-                {iv.medium}
-              </div>
-              <p style={{ margin: "8px 0 0", fontFamily: "var(--font-sans)", fontSize: 13.5, lineHeight: 1.5, color: "var(--text-secondary)" }}>
-                {iv.desc}
-              </p>
-            </div>
 
-            {/* Action */}
-            <div style={{ marginTop: 4 }}>
-              <a
-                href={iv.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-secondary"
-                style={{
-                  padding: "6px 14px",
-                  fontSize: 12,
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 6
-                }}
-              >
-                {iv.cta}
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: 12 }}>↗</span>
-              </a>
-            </div>
-          </div>
-        ))}
       </div>
     </section>
   );

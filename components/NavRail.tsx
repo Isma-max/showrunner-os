@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import { House, Layers, Folder, Workflow, Clock, Mail } from "lucide-react";
+import { House, Layers, Folder, Workflow, Clock, Tv, Mail } from "lucide-react";
 import { Lang, DICT } from "@/lib/content";
 
-const ICONS = [House, Layers, Folder, Workflow, Clock, Mail];
+const ICONS = [House, Layers, Folder, Workflow, Clock, Tv, Mail];
 
 interface NavRailProps {
   lang: Lang;
@@ -17,6 +17,7 @@ const SECTIONS = [
   "sec-work",
   "sec-method",
   "sec-exp",
+  "sec-interviews",
   "sec-contact",
 ];
 
