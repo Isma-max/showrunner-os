@@ -58,13 +58,9 @@ const PROJECTS_ES: Project[] = [
     outcome:
       "Telemira funciona como prueba de concepto de una nueva forma de producción audiovisual: más rápida, escalable, autoral y abierta a branded entertainment.",
     assets: [
-      "Trailer o episodio",
-      "Grilla de programas",
       "Personajes",
-      "Spots falsos",
       "Capturas del sitio",
       "Redes de personajes",
-      "Kit de prensa",
       "Identidad de marca",
       "Estética de transmisión",
     ],
@@ -285,13 +281,9 @@ const PROJECTS_EN: Project[] = [
     outcome:
       "Telemira works as a proof of concept for a new kind of audiovisual production: faster, scalable, authored and open to branded entertainment.",
     assets: [
-      "Trailer or episode",
-      "Programming grid",
       "Characters",
-      "Fake commercials",
       "Website captures",
       "Character social accounts",
-      "Press kit",
       "Brand identity",
       "Broadcast aesthetic",
     ],

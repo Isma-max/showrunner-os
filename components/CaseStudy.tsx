@@ -478,104 +478,39 @@ export default function CaseStudy({
                 }
 
                 if (isTelemira) {
-                  if (i === 0) { // Trailer o episodio
-                    return (
-                      <div key={i} style={{ border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", overflow: "hidden", background: "#0A0C12", display: "flex", flexDirection: "column" }}>
-                        <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden" }}>
-                          <video src="/projects/telemira/presentation.mp4" controls style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "contain" }} />
-                        </div>
-                        <div style={{ padding: "10px 14px", fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600, borderTop: "1px solid var(--border-hairline)", background: "var(--surface-sunken)", color: "var(--text-primary)" }}>{at}</div>
-                      </div>
-                    );
+                  let imgPath = "";
+                  let labelSuffix = "";
+
+                  if (at === "Personajes" || at === "Characters") {
+                    imgPath = "/projects/telemira/julieta.png";
+                    labelSuffix = " (Julieta Mansilla)";
+                  } else if (at === "Capturas del sitio" || at === "Website captures") {
+                    imgPath = "/projects/telemira/luis-mario.png";
+                    labelSuffix = " (Luis Mario Ep. 4)";
+                  } else if (at === "Redes de personajes" || at === "Character social accounts") {
+                    imgPath = "/projects/telemira/chimpansexy.png";
+                    labelSuffix = " (Chimpansexy)";
+                  } else if (at === "Identidad de marca" || at === "Brand identity") {
+                    imgPath = "/projects/telemira/telemira-1.png";
+                  } else if (at === "Estética de transmisión" || at === "Broadcast aesthetic") {
+                    imgPath = "/projects/telemira/telemira-2.png";
                   }
-                  if (i === 3) { // Spots falsos (Homotherian video)
-                    return (
-                      <div key={i} style={{ border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", overflow: "hidden", background: "#0A0C12", display: "flex", flexDirection: "column" }}>
-                        <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden" }}>
-                          <video src="/projects/telemira/homotherian.mp4" controls style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "contain" }} />
-                        </div>
-                        <div style={{ padding: "10px 14px", fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600, borderTop: "1px solid var(--border-hairline)", background: "var(--surface-sunken)", color: "var(--text-primary)" }}>{at}</div>
-                      </div>
-                    );
-                  }
-                  if (i === 1 || i === 6) { // Grilla / Kit de prensa (PDF link)
-                    return (
-                      <a
-                        key={i}
-                        href="/projects/telemira/telemiragrama.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          border: "1px solid var(--blue-200)",
-                          borderRadius: "var(--radius-md)",
-                          background: "var(--blue-50)",
-                          display: "flex",
-                          flexDirection: "column",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          padding: 24,
-                          textAlign: "center",
-                          gap: 10,
-                          cursor: "pointer",
-                          transition: "transform 220ms ease, box-shadow 220ms ease"
-                        }}
-                        className="btn-secondary-hover"
-                      >
-                        <span style={{ fontSize: 32 }}>📄</span>
-                        <div>
-                          <div style={{ fontFamily: "var(--font-sans)", fontSize: 14, fontWeight: 700, color: "var(--blue-600)" }}>{at}</div>
-                          <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--text-muted)", marginTop: 4 }}>telemiragrama.pdf (19MB)</div>
-                        </div>
-                      </a>
-                    );
-                  }
-                  if (i === 2) { // Personajes (Julieta Mansilla)
+
+                  if (imgPath) {
                     return (
                       <div key={i} style={{ border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", overflow: "hidden", display: "flex", flexDirection: "column" }}>
                         <div style={{ position: "relative", height: 200, width: "100%" }}>
-                          <Image src="/projects/telemira/julieta.png" alt={at} fill style={{ objectFit: "cover" }} />
+                          <Image
+                            src={imgPath}
+                            alt={at}
+                            fill
+                            style={{ objectFit: "cover" }}
+                            sizes="(max-width: 860px) 100vw, 260px"
+                          />
                         </div>
-                        <div style={{ padding: "10px 14px", fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600, borderTop: "1px solid var(--border-hairline)", background: "var(--surface-sunken)", color: "var(--text-primary)" }}>{at} (Julieta Mansilla)</div>
-                      </div>
-                    );
-                  }
-                  if (i === 4) { // Capturas del sitio (Luis Mario ep 4)
-                    return (
-                      <div key={i} style={{ border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", overflow: "hidden", display: "flex", flexDirection: "column" }}>
-                        <div style={{ position: "relative", height: 200, width: "100%" }}>
-                          <Image src="/projects/telemira/luis-mario.png" alt={at} fill style={{ objectFit: "cover" }} />
+                        <div style={{ padding: "10px 14px", fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600, borderTop: "1px solid var(--border-hairline)", background: "var(--surface-sunken)", color: "var(--text-primary)" }}>
+                          {at}{labelSuffix}
                         </div>
-                        <div style={{ padding: "10px 14px", fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600, borderTop: "1px solid var(--border-hairline)", background: "var(--surface-sunken)", color: "var(--text-primary)" }}>{at} (Luis Mario Ep. 4)</div>
-                      </div>
-                    );
-                  }
-                  if (i === 5) { // Redes de personajes (Chimpansexy)
-                    return (
-                      <div key={i} style={{ border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", overflow: "hidden", display: "flex", flexDirection: "column" }}>
-                        <div style={{ position: "relative", height: 200, width: "100%" }}>
-                          <Image src="/projects/telemira/chimpansexy.png" alt={at} fill style={{ objectFit: "cover" }} />
-                        </div>
-                        <div style={{ padding: "10px 14px", fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600, borderTop: "1px solid var(--border-hairline)", background: "var(--surface-sunken)", color: "var(--text-primary)" }}>{at} (Chimpansexy)</div>
-                      </div>
-                    );
-                  }
-                  if (i === 7) { // Identidad de marca (telemira-1.png)
-                    return (
-                      <div key={i} style={{ border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", overflow: "hidden", display: "flex", flexDirection: "column" }}>
-                        <div style={{ position: "relative", height: 200, width: "100%" }}>
-                          <Image src="/projects/telemira/telemira-1.png" alt={at} fill style={{ objectFit: "cover" }} />
-                        </div>
-                        <div style={{ padding: "10px 14px", fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600, borderTop: "1px solid var(--border-hairline)", background: "var(--surface-sunken)", color: "var(--text-primary)" }}>{at}</div>
-                      </div>
-                    );
-                  }
-                  if (i === 8) { // Estética de transmisión (telemira-2.png)
-                    return (
-                      <div key={i} style={{ border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", overflow: "hidden", display: "flex", flexDirection: "column" }}>
-                        <div style={{ position: "relative", height: 200, width: "100%" }}>
-                          <Image src="/projects/telemira/telemira-2.png" alt={at} fill style={{ objectFit: "cover" }} />
-                        </div>
-                        <div style={{ padding: "10px 14px", fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600, borderTop: "1px solid var(--border-hairline)", background: "var(--surface-sunken)", color: "var(--text-primary)" }}>{at}</div>
                       </div>
                     );
                   }
