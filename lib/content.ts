@@ -19,6 +19,10 @@ export type Project = {
   assets: string[];
   cta: string;
   externalUrl?: string;
+  /** Métrica corta para la tarjeta (mono, estilo OS). */
+  metric?: string;
+  /** Videos de YouTube embebidos en el case study. */
+  videos?: { id: string; label: string; start?: number }[];
 };
 
 export type ArchiveItem = {
@@ -65,6 +69,10 @@ const PROJECTS_ES: Project[] = [
       "Estética de transmisión",
     ],
     cta: "Explorar Telemira",
+    videos: [
+      { id: "7r26brD8X0g", label: "Señal Telemira — muestra en emisión" },
+      { id: "0TW0EQv-i5U", label: "Detrás de la señal — proceso y formatos", start: 55 },
+    ],
   },
   {
     slug: "mirai-media",
@@ -108,6 +116,7 @@ const PROJECTS_ES: Project[] = [
     crumb: "WBD · Operación social-first",
     client: "Warner Bros. Discovery",
     media: "wave",
+    metric: "300 VIDEOS/DÍA · 2× REVENUE DIGITAL",
     overview:
       "Diseño y liderazgo de un sistema de producción digital para múltiples marcas de entretenimiento en Latinoamérica, Brasil y US Hispanic.",
     role: "Director de contenidos / Dirección creativa / Estrategia social-first / Coordinación regional",
@@ -128,7 +137,7 @@ const PROJECTS_ES: Project[] = [
       "Hasta 300 videos diarios.",
       "Equipos remotos en Chile, Perú, Brasil y Argentina.",
       "Contenido para Discovery, Warner Channel, Cartoon Network, Discovery Kids, Food Network, Home & Health, Animal Planet, entre otras.",
-      "Crecimiento relevante de ingresos digitales desde el inicio de la operación.",
+      "Crecimiento de 2× en ingresos digitales desde el inicio de la operación.",
     ],
     assets: [
       "Discovery Channel",
@@ -179,12 +188,13 @@ const PROJECTS_ES: Project[] = [
   {
     slug: "prisa",
     title: "PRISA Media Chile",
-    descriptor: "Monetización de video digital",
+    descriptor: "Monetización y formatos de video a partir de contenido radial",
     crumb: "PRISA · Video digital",
     client: "PRISA Media Chile",
     media: "bars",
+    metric: "RADIO → VIDEO · MONETIZACIÓN ACTIVADA",
     overview:
-      "Consultoría enfocada en crecimiento, empaquetamiento y monetización de video digital para un ecosistema de marcas de medios.",
+      "Consultoría enfocada en crecimiento, empaquetamiento y monetización de video digital para un ecosistema de marcas de medios. Activación de la monetización y diseño de formatos audiovisuales que parten de contenido originalmente solo auditivo (radios).",
     role: "Consultoría estratégica / Video digital / Audiencias / Monetización",
     challenge:
       "Detectar oportunidades para que marcas de medios con audiencias existentes puedan expandir su presencia en video digital y convertirla en valor comercial.",
@@ -214,10 +224,11 @@ const PROJECTS_ES: Project[] = [
   {
     slug: "panamericanos",
     title: "Santiago 2023 / Panamericanos",
-    descriptor: "Narrativa audiovisual y comunicación estratégica",
+    descriptor: "La campaña que obtuvo la sede para Santiago",
     crumb: "Santiago 2023 · Panamericanos",
     client: "Santiago 2023 / Panam Sports / Min. Deporte",
     media: "wave",
+    metric: "SEDE OBTENIDA POR UNANIMIDAD",
     overview:
       "Participación en el desarrollo de contenidos y narrativa audiovisual vinculada a la postulación y obtención de Santiago como ciudad sede de los Juegos Panamericanos 2023. Una experiencia asociada a comunicación estratégica, relato territorial, deporte, identidad regional y producción de contenidos para un evento de escala continental. El proyecto combinó mirada editorial, sensibilidad institucional y capacidad de síntesis audiovisual para construir una narrativa capaz de representar a Santiago y Chile frente a una audiencia internacional. La experiencia conecta deporte, ciudad, cultura, producción audiovisual y comunicación de alto impacto, en el contexto de uno de los hitos deportivos más relevantes realizados en el país.",
     role: "Dirección de contenidos / Dirección creativa / Estrategia de comunicación / Relato territorial",
@@ -288,6 +299,10 @@ const PROJECTS_EN: Project[] = [
       "Broadcast aesthetic",
     ],
     cta: "Explore Telemira",
+    videos: [
+      { id: "7r26brD8X0g", label: "Telemira signal — on-air sample" },
+      { id: "0TW0EQv-i5U", label: "Behind the signal — process & formats", start: 55 },
+    ],
   },
   {
     slug: "mirai-media",
@@ -331,6 +346,7 @@ const PROJECTS_EN: Project[] = [
     crumb: "WBD · Social-first operation",
     client: "Warner Bros. Discovery",
     media: "wave",
+    metric: "300 VIDEOS/DAY · 2× DIGITAL REVENUE",
     overview:
       "Design and leadership of a digital production system for multiple entertainment brands across Latin America, Brazil and US Hispanic markets.",
     role: "Content Director / Creative Direction / Social-first Strategy / Regional Coordination",
@@ -351,7 +367,7 @@ const PROJECTS_EN: Project[] = [
       "Up to 300 videos produced daily.",
       "Remote teams in Chile, Peru, Brazil and Argentina.",
       "Content for brands such as Discovery, Warner Channel, Cartoon Network, Discovery Kids, Food Network, Home & Health, Animal Planet and others.",
-      "Significant digital revenue growth from the beginning of the operation.",
+      "2× digital revenue growth from the beginning of the operation.",
     ],
     assets: [
       "Discovery Channel",
@@ -402,12 +418,13 @@ const PROJECTS_EN: Project[] = [
   {
     slug: "prisa",
     title: "PRISA Media Chile",
-    descriptor: "Digital video monetization strategy",
+    descriptor: "Monetization and video formats built from radio content",
     crumb: "PRISA · Digital video",
     client: "PRISA Media Chile",
     media: "bars",
+    metric: "RADIO → VIDEO · MONETIZATION ACTIVATED",
     overview:
-      "Consulting focused on growth, packaging and digital video monetization for a media brand ecosystem.",
+      "Consulting focused on growth, packaging and digital video monetization for a media brand ecosystem. Monetization activation and the design of audiovisual formats built from originally audio-only (radio) content.",
     role: "Strategic Consulting / Digital Video / Audiences / Monetization",
     challenge:
       "Identify opportunities for media brands with existing audiences to expand their digital video presence and turn it into commercial value.",
@@ -437,10 +454,11 @@ const PROJECTS_EN: Project[] = [
   {
     slug: "panamericanos",
     title: "Santiago 2023 / Pan Americans",
-    descriptor: "Audiovisual storytelling and strategic communication",
+    descriptor: "The bid campaign that won Santiago the host city",
     crumb: "Santiago 2023 · Pan Americans",
     client: "Santiago 2023 / Panam Sports / Min. Deporte",
     media: "wave",
+    metric: "HOST CITY WON UNANIMOUSLY",
     overview:
       "Participation in the development of content and audiovisual narrative linked to the bid and acquisition of Santiago as the host city for the 2023 Pan American Games. An experience associated with strategic communication, territorial storytelling, sports, regional identity, and content production for a continent-scale event. The project combined editorial vision, institutional sensitivity, and audiovisual synthesis capacity to build a narrative capable of representing Santiago and Chile to an international audience. The experience connects sports, city, culture, audiovisual production, and high-impact communication within the context of one of the most relevant sports milestones in the country's history.",
     role: "Content Director / Creative Direction / Communication Strategy / Territorial Storytelling",
@@ -496,7 +514,7 @@ export const DICT = {
       ctaSecondary: "Hablemos",
       nowLabel: "Ahora en producción",
       nowTitle: "Telemira",
-      nowDesc: "Canal ficticio generado con IA",
+      nowDesc: "Señal en vivo · canal ficticio generado con IA",
       nowCta: "Explorar",
     },
     folders: [
@@ -646,7 +664,7 @@ export const DICT = {
       ctaSecondary: "Let's talk",
       nowLabel: "Now in production",
       nowTitle: "Telemira",
-      nowDesc: "AI-generated fictional TV channel",
+      nowDesc: "Live signal · AI-generated fictional channel",
       nowCta: "Explore",
     },
     folders: [

@@ -217,8 +217,9 @@ export default function HeroSection({
           }}
         >
           <div
-            style={{ position: "relative", height: 128, overflow: "hidden" }}
+            style={{ position: "relative", height: 200, overflow: "hidden", background: "#0A0C12" }}
           >
+            {/* Fallback image while iframe loads */}
             <Image
               src="/projects/telemira/telemira-1.png"
               alt="Telemira"
@@ -226,6 +227,24 @@ export default function HeroSection({
               style={{ objectFit: "cover", objectPosition: "center 8%" }}
               sizes="380px"
               priority
+            />
+            {/* Live muted loop — oversized to cover, click-through to card */}
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/7r26brD8X0g?autoplay=1&mute=1&loop=1&playlist=7r26brD8X0g&controls=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&iv_load_policy=3"
+              title="Telemira — señal en vivo"
+              allow="autoplay; encrypted-media"
+              tabIndex={-1}
+              aria-hidden
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                width: "130%",
+                height: "130%",
+                transform: "translate(-50%, -50%)",
+                border: 0,
+                pointerEvents: "none",
+              }}
             />
             <div
               style={{
@@ -237,6 +256,56 @@ export default function HeroSection({
                 pointerEvents: "none",
               }}
             />
+            {/* ON AIR badge */}
+            <div
+              style={{
+                position: "absolute",
+                top: 10,
+                left: 10,
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 6,
+                background: "rgba(10,12,18,0.78)",
+                backdropFilter: "blur(6px)",
+                WebkitBackdropFilter: "blur(6px)",
+                border: "1px solid rgba(255,255,255,0.18)",
+                borderRadius: 999,
+                padding: "4px 10px 4px 8px",
+                fontFamily: "var(--font-mono)",
+                fontSize: 10,
+                letterSpacing: "0.14em",
+                color: "#fff",
+                pointerEvents: "none",
+              }}
+            >
+              <span
+                style={{
+                  width: 7,
+                  height: 7,
+                  borderRadius: 999,
+                  background: "#FF3B30",
+                  animation: "osPulse 1.6s ease-out infinite",
+                  display: "block",
+                }}
+              />
+              ON AIR
+            </div>
+            {/* Channel label */}
+            <div
+              style={{
+                position: "absolute",
+                bottom: 8,
+                right: 10,
+                fontFamily: "var(--font-mono)",
+                fontSize: 9.5,
+                letterSpacing: "0.1em",
+                color: "rgba(255,255,255,0.75)",
+                textShadow: "0 1px 4px rgba(0,0,0,0.6)",
+                pointerEvents: "none",
+              }}
+            >
+              CH 01 — TELEMIRA
+            </div>
           </div>
           <div style={{ padding: "16px 18px 18px" }}>
             <div className="section-label" style={{ fontSize: 11 }}>

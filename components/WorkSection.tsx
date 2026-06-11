@@ -440,6 +440,29 @@ function ProjectCard({
           {project.descriptor}
         </p>
 
+        {project.metric && (
+          <div
+            style={{
+              marginTop: 12,
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              fontFamily: "var(--font-mono)",
+              fontSize: 11,
+              letterSpacing: "0.08em",
+              color: "var(--blue-600)",
+              background: "rgba(30,71,240,0.06)",
+              border: "1px dashed rgba(30,71,240,0.3)",
+              borderRadius: "var(--radius-xs)",
+              padding: "5px 10px",
+              maxWidth: "100%",
+            }}
+          >
+            <span aria-hidden style={{ flexShrink: 0 }}>▸</span>
+            <span style={{ minWidth: 0 }}>{project.metric}</span>
+          </div>
+        )}
+
         <div
           style={{
             display: "flex",

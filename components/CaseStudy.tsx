@@ -237,6 +237,56 @@ export default function CaseStudy({
             {project.overview}
           </p>
 
+          {/* Videos */}
+          {project.videos && project.videos.length > 0 && (
+            <div style={{ marginTop: 32 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <span style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--blue-600)" }}>
+                  {lang === "es" ? "En emisión" : "On air"}
+                </span>
+                <span style={{ width: 7, height: 7, borderRadius: 999, background: "#FF3B30", animation: "osPulse 1.6s ease-out infinite", display: "block" }} />
+              </div>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(340px,100%),1fr))", gap: 16, marginTop: 14 }}>
+                {project.videos.map((v, i) => (
+                  <figure key={v.id} style={{ margin: 0 }}>
+                    <div
+                      style={{
+                        position: "relative",
+                        width: "100%",
+                        aspectRatio: "16 / 9",
+                        background: "#0A0C12",
+                        borderRadius: "var(--radius-md)",
+                        overflow: "hidden",
+                        border: "1px solid var(--border-hairline)",
+                        boxShadow: "var(--shadow-card)",
+                      }}
+                    >
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${v.id}?rel=0&modestbranding=1${v.start ? `&start=${v.start}` : ""}`}
+                        title={v.label}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        loading="lazy"
+                        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0 }}
+                      />
+                    </div>
+                    <figcaption
+                      style={{
+                        marginTop: 8,
+                        fontFamily: "var(--font-mono)",
+                        fontSize: 11,
+                        letterSpacing: "0.06em",
+                        color: "var(--text-muted)",
+                      }}
+                    >
+                      [ VIDEO_{(i + 1 < 10 ? "0" : "") + (i + 1)} ] {v.label}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Challenge / Solution */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(280px,100%),1fr))", gap: 16, marginTop: 28 }}>
             {[
