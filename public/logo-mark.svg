@@ -1,0 +1,23 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Showrunner OS">
+  <defs>
+    <linearGradient id="sq" x1="12" y1="8" x2="108" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3D74FF"></stop>
+      <stop offset="1" stop-color="#1E47F0"></stop>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="104" height="104" rx="28" fill="url(#sq)"></rect>
+  
+  <g fill="#FFFFFF">
+    <rect x="52" y="34" width="16" height="16" rx="2"></rect>
+    <rect x="52" y="70" width="16" height="16" rx="2"></rect>
+    <rect x="34" y="52" width="16" height="16" rx="2"></rect>
+    <rect x="70" y="52" width="16" height="16" rx="2"></rect>
+    <rect x="52" y="52" width="16" height="16" rx="2"></rect>
+  </g>
+  <g fill="#FFFFFF" opacity="0.55">
+    <rect x="38" y="38" width="8" height="8" rx="1.5"></rect>
+    <rect x="74" y="38" width="8" height="8" rx="1.5"></rect>
+    <rect x="38" y="74" width="8" height="8" rx="1.5"></rect>
+    <rect x="74" y="74" width="8" height="8" rx="1.5"></rect>
+  </g>
+</svg>
