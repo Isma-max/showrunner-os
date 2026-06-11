@@ -71,7 +71,6 @@ const PROJECTS_ES: Project[] = [
     cta: "Explorar Telemira",
     videos: [
       { id: "7r26brD8X0g", label: "Señal Telemira — muestra en emisión" },
-      { id: "0TW0EQv-i5U", label: "Detrás de la señal — proceso y formatos", start: 55 },
     ],
   },
   {
@@ -108,6 +107,9 @@ const PROJECTS_ES: Project[] = [
       "Material de archivo",
     ],
     cta: "Ver universo Mirai",
+    videos: [
+      { id: "0TW0EQv-i5U", label: "El Show de Las Javis — Cómo ser chilena", start: 55 },
+    ],
   },
   {
     slug: "wbd",
@@ -301,7 +303,6 @@ const PROJECTS_EN: Project[] = [
     cta: "Explore Telemira",
     videos: [
       { id: "7r26brD8X0g", label: "Telemira signal — on-air sample" },
-      { id: "0TW0EQv-i5U", label: "Behind the signal — process & formats", start: 55 },
     ],
   },
   {
@@ -338,6 +339,9 @@ const PROJECTS_EN: Project[] = [
       "Archive material",
     ],
     cta: "Explore Mirai",
+    videos: [
+      { id: "0TW0EQv-i5U", label: "El Show de Las Javis — How to be Chilean", start: 55 },
+    ],
   },
   {
     slug: "wbd",
