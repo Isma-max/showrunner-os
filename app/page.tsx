@@ -185,6 +185,7 @@ export default function Home() {
           minWidth: 0,
           position: "relative",
           backgroundSize: "32px 32px",
+          overflowX: "hidden",
         }}
       >
         {/* Desktop Language toggle */}
@@ -371,36 +372,24 @@ export default function Home() {
                 onGoContact={() => goSection("sec-contact")}
                 onOpenTelemira={() => openCase("telemira")}
               />
-              {/* punk-girl-1: escaping from the top-right, partially clipped */}
+              {/* punk-girl-1: floating next to folder shortcuts */}
               <SiteSticker
                 src="/iconografia-stickers/punk-girl-1.png"
-                size={88}
                 rotation={-8}
                 floatDelay={0.3}
                 floatSpeed={7}
                 mobileHide
-                style={{
-                  top: 20,
-                  right: -22,
-                  "--float-dur": "7s",
-                  "--float-delay": "0.3s",
-                } as React.CSSProperties}
+                className="sticker-hero-punk"
               />
               {/* sticker-stars: small accent near section bottom-left */}
               <SiteSticker
                 src="/iconografia-stickers/sticker-stars.png"
-                size={52}
                 rotation={18}
                 floatDelay={1.8}
                 floatSpeed={9}
                 mobileHide
-                style={{
-                  bottom: -10,
-                  left: -18,
-                  opacity: 0.72,
-                  "--float-dur": "9s",
-                  "--float-delay": "1.8s",
-                } as React.CSSProperties}
+                className="sticker-hero-stars"
+                style={{ opacity: 0.72 }}
               />
             </div>
 
@@ -410,18 +399,11 @@ export default function Home() {
               {/* pastilla-alada: top-right, entering from the edge */}
               <SiteSticker
                 src="/iconografia-stickers/pastilla-alada.png"
-                size={68}
                 rotation={22}
                 floatDelay={0.6}
                 floatSpeed={8}
                 mobileHide
-                className="site-sticker-alt"
-                style={{
-                  top: -24,
-                  right: -18,
-                  "--float-dur": "8s",
-                  "--float-delay": "0.6s",
-                } as React.CSSProperties}
+                className="site-sticker-alt sticker-services-pill"
               />
             </div>
 
@@ -431,33 +413,20 @@ export default function Home() {
               {/* sticker-flower: left edge, medium size */}
               <SiteSticker
                 src="/iconografia-stickers/sticker-flower.png"
-                size={58}
                 rotation={-20}
                 floatDelay={1.1}
                 floatSpeed={10}
                 mobileHide
-                style={{
-                  top: 140,
-                  left: -22,
-                  "--float-dur": "10s",
-                  "--float-delay": "1.1s",
-                } as React.CSSProperties}
+                className="sticker-work-flower"
               />
               {/* corazon-roto: bottom-right of the work grid, peeking in */}
               <SiteSticker
                 src="/iconografia-stickers/corazon-roto.png"
-                size={62}
                 rotation={12}
                 floatDelay={2.4}
                 floatSpeed={7.5}
                 mobileHide
-                className="site-sticker-alt"
-                style={{
-                  bottom: -16,
-                  right: -14,
-                  "--float-dur": "7.5s",
-                  "--float-delay": "2.4s",
-                } as React.CSSProperties}
+                className="site-sticker-alt sticker-work-heart"
               />
             </div>
 
@@ -467,18 +436,12 @@ export default function Home() {
               {/* sticker-eye: left edge, small detail */}
               <SiteSticker
                 src="/iconografia-stickers/sticker-eye.png"
-                size={48}
                 rotation={-14}
                 floatDelay={0.9}
                 floatSpeed={8.5}
                 mobileHide
-                style={{
-                  top: 100,
-                  left: -16,
-                  opacity: 0.8,
-                  "--float-dur": "8.5s",
-                  "--float-delay": "0.9s",
-                } as React.CSSProperties}
+                className="sticker-method-eye"
+                style={{ opacity: 0.8 }}
               />
             </div>
 
@@ -488,39 +451,26 @@ export default function Home() {
               {/* cafe-gloria: right side, small secret */}
               <SiteSticker
                 src="/iconografia-stickers/cafe-gloria.png"
-                size={44}
                 rotation={25}
                 floatDelay={1.5}
                 floatSpeed={11}
                 mobileHide
-                className="site-sticker-alt"
-                style={{
-                  top: 50,
-                  right: -12,
-                  opacity: 0.75,
-                  "--float-dur": "11s",
-                  "--float-delay": "1.5s",
-                } as React.CSSProperties}
+                className="site-sticker-alt sticker-exp-coffee"
+                style={{ opacity: 0.75 }}
               />
             </div>
 
             {/* Interviews section stickers */}
             <div style={{ position: "relative" }}>
               <InterviewsSection lang={lang} />
-              {/* punk-girl-2: left edge, bigger, entering the frame */}
+              {/* punk-girl-2: right side gutter, peeking in */}
               <SiteSticker
                 src="/iconografia-stickers/punk-girl-2.png"
-                size={82}
                 rotation={-7}
                 floatDelay={0.4}
                 floatSpeed={9}
                 mobileHide
-                style={{
-                  top: 80,
-                  left: -28,
-                  "--float-dur": "9s",
-                  "--float-delay": "0.4s",
-                } as React.CSSProperties}
+                className="sticker-interviews-punk"
               />
             </div>
 
@@ -532,19 +482,12 @@ export default function Home() {
               {/* sticker-stars: bottom-right, exiting the layout */}
               <SiteSticker
                 src="/iconografia-stickers/sticker-stars.png"
-                size={55}
                 rotation={8}
                 floatDelay={2.1}
                 floatSpeed={8}
                 mobileHide
-                className="site-sticker-alt"
-                style={{
-                  bottom: 40,
-                  right: -18,
-                  opacity: 0.65,
-                  "--float-dur": "8s",
-                  "--float-delay": "2.1s",
-                } as React.CSSProperties}
+                className="site-sticker-alt sticker-contact-stars"
+                style={{ opacity: 0.65 }}
               />
             </div>
 

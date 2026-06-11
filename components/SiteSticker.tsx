@@ -45,6 +45,8 @@ export default function SiteSticker({
         pointerEvents: "none",
         userSelect: "none",
         zIndex: 2,
+        width: size,
+        height: size,
         animationDelay: `${floatDelay}s`,
         animationDuration: `${floatSpeed}s`,
         "--rot": `${rotation}deg`,
@@ -57,14 +59,14 @@ export default function SiteSticker({
         width={size}
         height={size}
         style={{
-          width: size,
-          height: "auto",
+          width: "100%",
+          height: "100%",
           display: "block",
           objectFit: "contain",
           filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.12))",
         }}
         priority={priority}
-        sizes={`${size}px`}
+        sizes="(max-width: 768px) 60px, 120px"
       />
     </div>
   );
