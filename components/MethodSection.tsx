@@ -15,7 +15,7 @@ export default function MethodSection({ lang }: { lang: Lang }) {
   useEffect(() => {
     const mm = gsap.matchMedia(ref);
 
-    // Desktop: la sección se fija y las etapas se "encienden" con el scroll
+    // Desktop: las etapas se "encienden" conforme la sección cruza el viewport (scrub sin pin)
     mm.add(
       "(min-width: 861px) and (prefers-reduced-motion: no-preference)",
       () => {
@@ -27,11 +27,10 @@ export default function MethodSection({ lang }: { lang: Lang }) {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: ref.current,
-            start: "top 16%",
-            end: "+=130%",
-            scrub: 0.35,
-            pin: true,
-            anticipatePin: 1,
+            start: "top 78%",
+            end: "bottom 35%",
+            scrub: 0.4,
+            invalidateOnRefresh: true,
             onUpdate: (st) => {
               if (pctRef.current) {
                 const p = String(Math.round(st.progress * 100)).padStart(2, "0");
@@ -77,7 +76,13 @@ export default function MethodSection({ lang }: { lang: Lang }) {
       }
     );
 
-    return () => mm.revert();
+    // Recalcular posiciones cuando el layout ya está asentado (post animación de entrada)
+    const refreshT = setTimeout(() => ScrollTrigger.refresh(), 700);
+
+    return () => {
+      clearTimeout(refreshT);
+      mm.revert();
+    };
   }, [lang]);
 
   return (
