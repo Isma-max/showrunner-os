@@ -12,7 +12,6 @@ import AboutSection from "@/components/AboutSection";
 import InterviewsSection from "@/components/InterviewsSection";
 import ContactSection from "@/components/ContactSection";
 import CaseStudy from "@/components/CaseStudy";
-import SiteSticker from "@/components/SiteSticker";
 import { DICT, Lang } from "@/lib/content";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -362,134 +361,26 @@ export default function Home() {
               <span style={{ marginRight: 120 }}>1440 PX — GRID SYSTEM</span>
             </div>
 
-            {/* === STICKER LAYER: Escaped Mirai Lab creatures === */}
+            <HeroSection
+              lang={lang}
+              onGoWork={() => goSection("sec-work")}
+              onGoContact={() => goSection("sec-contact")}
+              onOpenTelemira={() => openCase("telemira")}
+            />
 
-            {/* Hero stickers */}
-            <div style={{ position: "relative" }}>
-              <HeroSection
-                lang={lang}
-                onGoWork={() => goSection("sec-work")}
-                onGoContact={() => goSection("sec-contact")}
-                onOpenTelemira={() => openCase("telemira")}
-              />
-              {/* punk-girl-1: floating next to folder shortcuts */}
-              <SiteSticker
-                src="/iconografia-stickers/punk-girl-1.png"
-                rotation={-8}
-                floatDelay={0.3}
-                floatSpeed={7}
-                mobileHide
-                className="sticker-hero-punk"
-              />
-              {/* sticker-stars: small accent near section bottom-left */}
-              <SiteSticker
-                src="/iconografia-stickers/sticker-stars.png"
-                rotation={18}
-                floatDelay={1.8}
-                floatSpeed={9}
-                mobileHide
-                className="sticker-hero-stars"
-                style={{ opacity: 0.72 }}
-              />
-            </div>
+            <ServicesSection lang={lang} />
 
-            {/* Services section stickers */}
-            <div style={{ position: "relative" }}>
-              <ServicesSection lang={lang} />
-              {/* pastilla-alada: top-right, entering from the edge */}
-              <SiteSticker
-                src="/iconografia-stickers/pastilla-alada.png"
-                rotation={22}
-                floatDelay={0.6}
-                floatSpeed={8}
-                mobileHide
-                className="site-sticker-alt sticker-services-pill"
-              />
-            </div>
+            <WorkSection lang={lang} onOpenProject={openCase} />
 
-            {/* Work section stickers */}
-            <div style={{ position: "relative" }}>
-              <WorkSection lang={lang} onOpenProject={openCase} />
-              {/* sticker-flower: left edge, medium size */}
-              <SiteSticker
-                src="/iconografia-stickers/sticker-flower.png"
-                rotation={-20}
-                floatDelay={1.1}
-                floatSpeed={10}
-                mobileHide
-                className="sticker-work-flower"
-              />
-              {/* corazon-roto: bottom-right of the work grid, peeking in */}
-              <SiteSticker
-                src="/iconografia-stickers/corazon-roto.png"
-                rotation={12}
-                floatDelay={2.4}
-                floatSpeed={7.5}
-                mobileHide
-                className="site-sticker-alt sticker-work-heart"
-              />
-            </div>
+            <MethodSection lang={lang} />
 
-            {/* Method section stickers */}
-            <div style={{ position: "relative" }}>
-              <MethodSection lang={lang} />
-              {/* sticker-eye: left edge, small detail */}
-              <SiteSticker
-                src="/iconografia-stickers/sticker-eye.png"
-                rotation={-14}
-                floatDelay={0.9}
-                floatSpeed={8.5}
-                mobileHide
-                className="sticker-method-eye"
-                style={{ opacity: 0.8 }}
-              />
-            </div>
+            <ExperienceSection lang={lang} />
 
-            {/* Experience section stickers */}
-            <div style={{ position: "relative" }}>
-              <ExperienceSection lang={lang} />
-              {/* cafe-gloria: right side, small secret */}
-              <SiteSticker
-                src="/iconografia-stickers/cafe-gloria.png"
-                rotation={25}
-                floatDelay={1.5}
-                floatSpeed={11}
-                mobileHide
-                className="site-sticker-alt sticker-exp-coffee"
-                style={{ opacity: 0.75 }}
-              />
-            </div>
-
-            {/* Interviews section stickers */}
-            <div style={{ position: "relative" }}>
-              <InterviewsSection lang={lang} />
-              {/* punk-girl-2: right side gutter, peeking in */}
-              <SiteSticker
-                src="/iconografia-stickers/punk-girl-2.png"
-                rotation={-7}
-                floatDelay={0.4}
-                floatSpeed={9}
-                mobileHide
-                className="sticker-interviews-punk"
-              />
-            </div>
+            <InterviewsSection lang={lang} />
 
             <AboutSection lang={lang} />
 
-            {/* Contact section stickers */}
-            <div style={{ position: "relative" }}>
-              <ContactSection lang={lang} />
-              {/* sticker-stars: bottom-right, exiting the layout */}
-              <SiteSticker
-                src="/iconografia-stickers/sticker-stars.png"
-                rotation={8}
-                floatDelay={2.1}
-                floatSpeed={8}
-                mobileHide
-                className="site-sticker-alt sticker-contact-stars"
-                style={{ opacity: 0.65 }}
-              />
-            </div>
+            <ContactSection lang={lang} />
 
             {/* Footer */}
             <div
