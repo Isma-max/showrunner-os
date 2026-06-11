@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import MediaAbstract from "./MediaAbstract";
+import DecodeText from "./DecodeText";
 import { Lang, DICT } from "@/lib/content";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -122,9 +123,9 @@ export default function HeroSection({
             color: "var(--text-display)",
           }}
         >
-          {t.hero.h1a}
+          <DecodeText key={`a-${lang}`} text={t.hero.h1a} startOnView={false} duration={700} />
           <br />
-          {t.hero.h1b}
+          <DecodeText key={`b-${lang}`} text={t.hero.h1b} startOnView={false} duration={850} delay={150} />
           <span style={{ color: "var(--blue-600)" }}>_</span>
         </h1>
 

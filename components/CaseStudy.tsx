@@ -4,6 +4,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import MediaAbstract from "./MediaAbstract";
 import OSWindow from "./OSWindow";
+import DecodeText from "./DecodeText";
 import { Lang, DICT, Project, LINKEDIN, EMAIL } from "@/lib/content";
 import { Award } from "lucide-react";
 
@@ -59,7 +60,7 @@ export default function CaseStudy({
           {t.ui.back}
         </button>
         <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.06em", color: "var(--blue-600)" }}>
-          {casePath}
+          <DecodeText key={slug} text={casePath} startOnView={false} duration={600} />
         </span>
       </div>
 

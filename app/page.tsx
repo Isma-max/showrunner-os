@@ -13,6 +13,7 @@ import InterviewsSection from "@/components/InterviewsSection";
 import ContactSection from "@/components/ContactSection";
 import CaseStudy from "@/components/CaseStudy";
 import ChannelStatic from "@/components/ChannelStatic";
+import DecodeText from "@/components/DecodeText";
 import { DICT, Lang } from "@/lib/content";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -398,7 +399,7 @@ export default function Home() {
                 marginBottom: 36,
               }}
             >
-              <span style={{ marginRight: 120 }}>1440 PX — GRID SYSTEM</span>
+              <span style={{ marginRight: 120 }}><DecodeText text="1440 PX — GRID SYSTEM" startOnView={false} duration={650} delay={350} /></span>
             </div>
 
             <HeroSection

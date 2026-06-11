@@ -7,6 +7,7 @@ import Image from "next/image";
 import MediaAbstract from "./MediaAbstract";
 import OSWindow from "./OSWindow";
 import Sticker from "./Sticker";
+import FlapText from "./FlapText";
 import { Lang, DICT, Project } from "@/lib/content";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -459,7 +460,7 @@ function ProjectCard({
             }}
           >
             <span aria-hidden style={{ flexShrink: 0 }}>▸</span>
-            <span style={{ minWidth: 0 }}>{project.metric}</span>
+            <span style={{ minWidth: 0 }}><FlapText text={project.metric} /></span>
           </div>
         )}
 
