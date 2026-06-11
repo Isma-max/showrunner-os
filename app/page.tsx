@@ -12,6 +12,7 @@ import AboutSection from "@/components/AboutSection";
 import InterviewsSection from "@/components/InterviewsSection";
 import ContactSection from "@/components/ContactSection";
 import CaseStudy from "@/components/CaseStudy";
+import ChannelStatic from "@/components/ChannelStatic";
 import { DICT, Lang } from "@/lib/content";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -36,8 +37,33 @@ export default function Home() {
   const [navIndex, setNavIndex] = useState(0);
   const [view, setView] = useState<string>("home"); // "home" or project slug
   const [isMobile, setIsMobile] = useState(false);
+  const [chStatic, setChStatic] = useState(false);
+  const [chLabel, setChLabel] = useState("");
   const homeScrollRef = useRef(0);
   const spyRafRef = useRef<number | null>(null);
+  const chTimersRef = useRef<ReturnType<typeof setTimeout>[]>([]);
+
+  // Transición "cambio de canal": estática breve y el swap ocurre bajo el ruido.
+  const switchChannel = useCallback((label: string, fn: () => void) => {
+    const reduce =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      fn();
+      return;
+    }
+    chTimersRef.current.forEach(clearTimeout);
+    chTimersRef.current = [];
+    setChLabel(label);
+    setChStatic(true);
+    chTimersRef.current.push(setTimeout(fn, 160));
+    chTimersRef.current.push(setTimeout(() => setChStatic(false), 430));
+  }, []);
+
+  useEffect(() => {
+    const timers = chTimersRef.current;
+    return () => timers.forEach(clearTimeout);
+  }, []);
 
   // Hydrate lang from localStorage
   useEffect(() => {
@@ -128,26 +154,37 @@ export default function Home() {
 
   const openCase = useCallback(
     (slug: string) => {
-      homeScrollRef.current = window.scrollY;
-      setView(slug);
-      window.scrollTo(0, 0);
+      const t = DICT[lang];
+      const i = t.projects.findIndex((p) => p.slug === slug);
+      const ch = String(i + 2).padStart(2, "0");
+      const title = (t.projects[i]?.title || slug).toUpperCase();
+      switchChannel(`CH ${ch} — ${title}`, () => {
+        homeScrollRef.current = window.scrollY;
+        setView(slug);
+        window.scrollTo(0, 0);
+      });
     },
-    []
+    [lang, switchChannel]
   );
 
   const goHome = useCallback(() => {
     const y = homeScrollRef.current;
-    setView("home");
-    setTimeout(() => window.scrollTo(0, y), 40);
-  }, []);
+    switchChannel("CH 01 — SHOWRUNNER OS", () => {
+      setView("home");
+      setTimeout(() => window.scrollTo(0, y), 40);
+    });
+  }, [switchChannel]);
 
   const nextCase = useCallback(() => {
     const t = DICT[lang];
     const i = t.projects.findIndex((p) => p.slug === view);
     const next = t.projects[(i + 1) % t.projects.length];
-    setView(next.slug);
-    window.scrollTo(0, 0);
-  }, [lang, view]);
+    const ch = String(((i + 1) % t.projects.length) + 2).padStart(2, "0");
+    switchChannel(`CH ${ch} — ${next.title.toUpperCase()}`, () => {
+      setView(next.slug);
+      window.scrollTo(0, 0);
+    });
+  }, [lang, view, switchChannel]);
 
   const setLangAndStore = (l: Lang) => {
     setLang(l);
@@ -169,6 +206,9 @@ export default function Home() {
 
   return (
     <div style={{ display: "flex", minHeight: "100vh", background: "var(--surface-app)", fontFamily: "var(--font-sans)", color: "var(--text-primary)" }}>
+
+      {/* Transición cambio de canal */}
+      <ChannelStatic active={chStatic} label={chLabel} />
 
       {/* Sidebar */}
       {!isMobile && (
