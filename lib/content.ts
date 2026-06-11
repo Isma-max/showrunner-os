@@ -625,8 +625,9 @@ export const DICT = {
         { label: "Base", value: "Santiago, Chile" },
         { label: "Estado", value: "Proyectos globales" },
       ] as Fact[],
-      ctaPrimary: "Escríbeme",
+      ctaPrimary: "Escríbeme por WhatsApp",
       ctaSecondary: "Ver LinkedIn",
+      waText: "Hola Ismael, vi tu portfolio y me gustaría conversar sobre un proyecto.",
     },
     footer: { copyright: "© 2026 · Santiago, Chile" },
     ui: {
@@ -758,8 +759,9 @@ export const DICT = {
         { label: "Base", value: "Santiago, Chile" },
         { label: "Status", value: "Global projects" },
       ] as Fact[],
-      ctaPrimary: "Email me",
+      ctaPrimary: "Message me on WhatsApp",
       ctaSecondary: "View LinkedIn",
+      waText: "Hi Ismael, I saw your portfolio and would like to talk about a project.",
     },
     footer: { copyright: "© 2026 · Santiago, Chile" },
     ui: {
@@ -783,6 +785,7 @@ export const DICT = {
   },
 };
 
+export const WHATSAPP = "https://wa.me/56993222822";
 export const LINKEDIN = "https://www.linkedin.com/in/ismael-larrain-izquierdo-23563a24/";
 export const EMAIL = "ismael.larrain@gmail.com";
 export const NAV_ICONS = ["house", "layers", "folder", "workflow", "clock", "tv", "mail"];

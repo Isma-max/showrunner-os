@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import OSWindow from "./OSWindow";
-import { Lang, DICT, LINKEDIN, EMAIL } from "@/lib/content";
+import { Lang, DICT, LINKEDIN, EMAIL, WHATSAPP } from "@/lib/content";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -75,7 +75,17 @@ export default function ContactSection({ lang }: { lang: Lang }) {
             {t.contact.facts.map((f, i) => (
               <div key={i} className="meta-row-item">
                 <span className="meta-row-label">{f.label}</span>
-                <span className="meta-row-value">{f.value}</span>
+                {f.value === EMAIL ? (
+                  <a
+                    href={`mailto:${EMAIL}`}
+                    className="meta-row-value"
+                    style={{ color: "var(--blue-600)", textDecoration: "none" }}
+                  >
+                    {f.value}
+                  </a>
+                ) : (
+                  <span className="meta-row-value">{f.value}</span>
+                )}
               </div>
             ))}
           </div>
@@ -83,8 +93,10 @@ export default function ContactSection({ lang }: { lang: Lang }) {
             style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 24 }}
           >
             <a
-              id="contact-email-btn"
-              href={`mailto:${EMAIL}`}
+              id="contact-whatsapp-btn"
+              href={`${WHATSAPP}?text=${encodeURIComponent(t.contact.waText)}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-primary"
             >
               {t.contact.ctaPrimary}
