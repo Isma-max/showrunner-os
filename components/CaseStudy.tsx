@@ -172,8 +172,9 @@ export default function CaseStudy({
                 alt={project.title}
                 fill
                 style={{
-                  objectFit: "cover",
-                  objectPosition: project.slug === "mirai-media" ? "top" : "center",
+                  objectFit: project.slug === "mirai-media" ? "contain" : "cover",
+                  objectPosition: "center",
+                  background: project.slug === "mirai-media" ? "var(--ink-900)" : undefined,
                 }}
                 sizes="(max-width: 860px) 100vw, 500px"
                 priority
