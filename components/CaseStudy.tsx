@@ -83,81 +83,21 @@ export default function CaseStudy({
                 sizes="(max-width: 860px) 100vw, 500px"
                 priority
               />
-            ) : project.slug === "panamericanos" ? (
+            ) : ["wbd", "duoc", "prisa", "panamericanos"].includes(project.slug) ? (
               <div
                 style={{
                   position: "absolute",
                   inset: 0,
-                  background: "linear-gradient(140deg, #102166 0%, #0A0C12 100%)",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  padding: "24px 28px",
-                  color: "rgba(255,255,255,0.85)",
-                  fontFamily: "var(--font-mono)",
-                }}
-              >
-                {/* Top Row: Technical metadata */}
-                <div style={{ display: "flex", justifyContent: "space-between", fontSize: 10, opacity: 0.7, letterSpacing: "0.08em" }}>
-                  <span>CASE: PANAM-2023</span>
-                  <span>ESTADIO NACIONAL</span>
-                </div>
-
-                {/* Center: Running track blueprint + Medal icon */}
-                <div style={{ position: "relative", flex: 1, display: "flex", alignItems: "center", justifyContent: "center", margin: "10px 0" }}>
-                  {/* Nested track lines */}
-                  <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} viewBox="0 0 340 100">
-                    {/* Outermost lane */}
-                    <rect x="20" y="5" width="300" height="90" rx="45" ry="45" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5" />
-                    {/* Lane 2 */}
-                    <rect x="40" y="15" width="260" height="70" rx="35" ry="35" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5" strokeDasharray="3 3" />
-                    {/* Lane 3 */}
-                    <rect x="60" y="25" width="220" height="50" rx="25" ry="25" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5" />
-                    {/* Center line */}
-                    <line x1="170" y1="5" x2="170" y2="95" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
-                  </svg>
-                  
-                  {/* Award Icon */}
-                  <div
-                    style={{
-                      position: "relative",
-                      width: 58,
-                      height: 58,
-                      borderRadius: 999,
-                      background: "rgba(30,71,240,0.18)",
-                      border: "1px solid rgba(255,255,255,0.25)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      boxShadow: "0 0 20px rgba(30,71,240,0.3)",
-                      zIndex: 2,
-                    }}
-                  >
-                    <Award size={28} strokeWidth={1.8} style={{ color: "#B9CCFF" }} />
-                  </div>
-                </div>
-
-                {/* Bottom Row: Coordinates & Event Label */}
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", fontSize: 9.5, opacity: 0.65, letterSpacing: "0.05em" }}>
-                  <span>LAT. 33.4651° S / LON. 70.6106° W</span>
-                  <span>SANTIAGO, CL</span>
-                </div>
-              </div>
-            ) : ["wbd", "duoc", "prisa"].includes(project.slug) ? (
-              <div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  background: project.slug === "prisa" ? "var(--ink-900)" : "var(--surface-sunken)",
+                  background: project.slug === "prisa" ? "var(--ink-900)" : project.slug === "panamericanos" ? "#ffffff" : "var(--surface-sunken)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  padding: "48px",
+                  padding: project.slug === "panamericanos" ? "32px" : "48px",
                 }}
               >
                 <div style={{ position: "relative", width: "100%", height: "100%" }}>
                   <Image
-                    src={`/projects/${project.slug}/logo.svg`}
+                    src={project.slug === "panamericanos" ? `/projects/${project.slug}/logo.png` : `/projects/${project.slug}/logo.svg`}
                     alt={project.title}
                     fill
                     style={{ objectFit: "contain" }}
