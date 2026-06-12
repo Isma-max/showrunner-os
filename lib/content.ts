@@ -108,7 +108,8 @@ const PROJECTS_ES: Project[] = [
     ],
     cta: "Ver universo Mirai",
     videos: [
-      { id: "0TW0EQv-i5U", label: "El Show de Las Javis — Cómo ser chilena", start: 55 },
+      { id: "lvy8WQNr428", label: "Intro de El Show de Las Javis" },
+      { id: "wl4W3xYUFmU", label: "Gloria desde los 40" },
     ],
   },
   {
@@ -345,7 +346,8 @@ const PROJECTS_EN: Project[] = [
     ],
     cta: "Explore Mirai",
     videos: [
-      { id: "0TW0EQv-i5U", label: "El Show de Las Javis — How to be Chilean", start: 55 },
+      { id: "lvy8WQNr428", label: "El Show de Las Javis Intro" },
+      { id: "wl4W3xYUFmU", label: "Gloria desde los 40" },
     ],
   },
   {
