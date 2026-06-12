@@ -293,7 +293,7 @@ export default function CaseStudy({
           </div>
 
           {/* Assets */}
-          {project.assets && project.assets.length > 0 && project.slug !== "duoc" && (
+          {project.assets && project.assets.length > 0 && !["duoc", "prisa"].includes(project.slug) && (
             <div style={{ marginTop: 36 }}>
               <div style={{ display: "flex", alignItems: "baseline", gap: 14, flexWrap: "wrap" }}>
               <span style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--blue-600)" }}>
