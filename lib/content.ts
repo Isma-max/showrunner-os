@@ -186,6 +186,11 @@ const PROJECTS_ES: Project[] = [
       "Módulos de malla / temas IA",
     ],
     cta: "Ver caso educativo",
+    videos: [
+      { id: "BTkl1QoF_i8", label: "Serie audiovisual — Presentadora IA" },
+      { id: "neJ2sZ4rsGg", label: "Cápsulas educativas — Clips de la serie", start: 22 },
+      { id: "7qpdNz5PjlE", label: "Workflow educativo e integración IA" },
+    ],
   },
   {
     slug: "prisa",
@@ -418,6 +423,11 @@ const PROJECTS_EN: Project[] = [
       "Curriculum modules / AI topics",
     ],
     cta: "View education case",
+    videos: [
+      { id: "BTkl1QoF_i8", label: "Audiovisual series — AI Presenter" },
+      { id: "neJ2sZ4rsGg", label: "Educational episodes — Series clips", start: 22 },
+      { id: "7qpdNz5PjlE", label: "Educational workflow and AI integration" },
+    ],
   },
   {
     slug: "prisa",

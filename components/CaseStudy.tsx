@@ -353,8 +353,9 @@ export default function CaseStudy({
           </div>
 
           {/* Assets */}
-          <div style={{ marginTop: 36 }}>
-            <div style={{ display: "flex", alignItems: "baseline", gap: 14, flexWrap: "wrap" }}>
+          {project.assets && project.assets.length > 0 && project.slug !== "duoc" && (
+            <div style={{ marginTop: 36 }}>
+              <div style={{ display: "flex", alignItems: "baseline", gap: 14, flexWrap: "wrap" }}>
               <span style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--blue-600)" }}>
                 {t.ui.assets}
               </span>
@@ -586,6 +587,7 @@ export default function CaseStudy({
               })}
             </div>
           </div>
+          )}
 
           {/* Related */}
           <div style={{ marginTop: 36 }}>
